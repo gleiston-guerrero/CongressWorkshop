@@ -1,0 +1,44 @@
+1. Los cuidadores deben poderse registrar (eso está) pero los cuidadores pueden agregar al mismo paciente (eso hay que modificar la base de datos)
+
+2. Los cuidadores a su vez registran a sus pacientes, uno o más de uno.
+
+3. Registran las medicinas y registran los horarios de las ingestas, pero debe escoger que tipo de horario es? o es contínuo o es exporádico?
+3.1. Si es contínuo la fecha inicial y la fecha final y a qué horas va a tomar, y de una vez con cuánto tiempo antes y después lo puede hacer (ese antes y después servirá para las alertas) y para almacenarse en la tabla se generan los horarios por cada día.. fecha y hora..
+3.2. si es exporádico debe pedir fecha y hora...
+
+4. Las cajas (Medicine Boxes) se arman automáticamente según horario del paciente con todos los medicamentos que le tocaba tomar. máximo 12 cajas deben estar en el dispensador (sin dispensar)
+
+5. Hay que controlar cuando el Cuidador expulsa una caja debe hacer que se registren los medicamentos de la caja del horario respectivo (olvidado o próximo a remover) como removido (expulsado).
+
+6. Debo yo poder saber que medicamentos contiene la caja próxima a ser expulsada.. y por supuesto por horario puedo ver que contendría la caja (para que el cuidador guarde en la caja todos los medicamentos que va a contener y ponerla en el Dispensador)
+
+7. Los cuidadores debe recibir las notificaciones de recordatorios (con el tiempo especificado antes) y confirmaciones (pasado el tiempo especificado después); confirmaciones después confirmación positiva (ícono verde Tomó el medicamento), confirmación negativa (icono ROJO) (No tomó el medicamento)
+
+8. Los pacientes deben recibir notificaciones de recordatorios antes, alertas a la hora y después de la hora según el tiempo especificado. Claro está sino tomó la medicina (el dispensador no expulsó)
+
+9. El cuidador debe ver qué otros cuidadores tienen a su cargo a uno de sus pacientes.
+
+10. Si el paciente tiene capacidades para manipular el móvil, que el cuidador le pueda enviar un sms (Déjalo al final, pero entre los datos píde el número de móvil)
+
+EL PACIENTE
+1. Debe ser registrado en la APP Móvil y podrá recibir notificaciones y consultar horarios de ingesta de medicinas, y por supuesto ver que medicamentos le toca tomar en determinada hora, y el número de su compartimiento (1 al 4, o al que sea)
+
+1.1. podrá consultar por nombre de medicamento a qué hora le toca y con qué otros medicamentos lo tomará.
+
+2. Poder enviarle un sms al cuidador? Se podrá... Déjalo al final. Debes pedir el número de móvil entre los datos.
+
+
+DISPENSER
+
+1. Debe detectar acercamiento y habilitar la cámara cuando se encuentre a una distancia prudencial (sino se puede dejara para que al final la configure ponle 1 metro)
+
+2. La cámara debe detectar un rostro antes de tomar la fotografía. Toma la fotografía cuando no cambie la distancia, es decir, se supone que ya está paradito al frente.
+
+3. Si es un paciente registrado, verifica a qué hora le toca tomar el medicamento si es el momento (con tiempo antes o después de la hora eso está especificado) debe expulsar el medicamento, debe indicarle el número del compartimiento (1, 2, 3, 4) recoja su medicamento.
+3.1. sino debe mostrarle un mensaje "subliminal" indicándole la hora de la próxima dosis... Hola... La próxima toma de medicamentos es a las 08H00, algo así...
+4. Cada vez que expulsa debe marcar que ya fue removido.
+5. Debe emitir las notificaciones en el ambiente como luces y sonido (Si se podría reproducir un sonido diferente sería ideal: antes, a la hora, y después)
+6. debe almacenarse (puede ser en la misma raspberry o en la BD de la nube) los intentos por identificación, es decir cuando ha fallado, la foto, y los datos fecha hora (Modificar la BD)
+
+Por favor algo que se me olvide, me informan
+
