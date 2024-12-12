@@ -1,0 +1,11 @@
+Rita Francese, Maria Frasca, Michele Risi,
+Are IoBT services accessible to everyone?,
+Pattern Recognition Letters,
+Volume 147,
+2021,
+Pages 71-77,
+ISSN 0167-8655,
+https://doi.org/10.1016/j.patrec.2021.04.007.
+(https://www.sciencedirect.com/science/article/pii/S0167865521001379)
+Abstract: Biometric recognition aims at identifying a person by using their physiological or behavioral characteristics. When adopted for improving the security in the Internet of Things (IoT) field, it is commonly named Internet of Biometric Things (IoBT). However, despite its advantages there are further considerations on security and different ethical and legal issues, such as the possibility of exclusion of individuals due to pathologies, injuries, disabilities, or genetic defects. Indeed, these specific physical condition would lead to not satisfy the requirements commonly used for biometric recognition. As a consequence, the limitations of current biometric systems can exclude a person from the use of IoBT services. In this paper, we focus on the difficulty of iris recognition when it is affected by Coloboma, a congenital abnormality of membranes of the eye. We show how this pathological state impacts on the performance of the Daugman and Canny edge detection algorithms, which represent the most widespread methods used for the iris localization step in eye-based biometric. Results of an experimentation revealed that they correctly detected only 15.79% and 47.37% of Coloboma iris, respectively. In order to avoid the use of these inaccurate algorithms in case of Coloboma eye, we designed and experimented a Residual Neural Network classifier able to detect the presence of this disease with 99.79% of accuracy. This classifier may be a first step towards a more sophisticated “diversity-aware” biometric system which represents an alternative to actual IoBT authentication method for people with special physical condition.
+Keywords: Security and IoBT; Iris recognition; Deep learning for IoBT applications
