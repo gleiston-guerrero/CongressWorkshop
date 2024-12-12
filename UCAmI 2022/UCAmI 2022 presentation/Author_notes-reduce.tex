@@ -1,0 +1,152 @@
+\documentclass[]{scrartcl}
+\usepackage{multicol}
+
+%opening
+\title{Internet of Things IoT-Based System for Classroom Access Control and Resource Management.}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+On behalf of the authors and on my own behalf, I am pleased to address you to present this work entitled Internet of Things (IoT)-Based System for Classroom Access Control and Resource Management (SISGERA).
+\end{abstract}
+
+\section*{(Introduction).}
+	
+	\subsection*{What is SISGERA.}
+	SISGERA from Spanish: Sistema de GEstión de Recursos de Aula, is a prototype of an IoT-based system that was developed following the Test-Driven Development Methodology for IoT-based Systems, as a feasible solution to manage classroom resources and to control access to classrooms. Therefore, the present work has a three goals.
+	
+	The \textbf{first goal} Classroom resource management aims to ensure that classroom resources are switched on for the required time.
+	
+	And as a consequence, \textbf{the second goal} reduce energy consumption. And \textbf{last goal} evaluate the TDDM 4 I.o.T.S.
+	
+	TDDM 4 I.o.T.S. is a methodology consisting of 11 phases, namely: Stage 1 Preliminary analysis, 2 Technology layer design, 3 Detailed requirement analysis, 4 Model generation and adaptation, 5 Test generation, 6 Software generation, 7 Model refinement, 8 Software refinement, 9 Hardware and software deployment, 10 Deliverable assessment, and 11 Maintenance. It addresses the construction of IoT device and development of both the software for IoT hardware configuration and the software for user interaction.
+\section*{Goal 1: Improve management of classroom resources.}
+	\subsection*{(Current challenges.)}
+	Without SISGERA, the janitorial staff is in charge of opening the doors of approximately sixteen classrooms at the beginning of the shift in the morning and closing them at the end of the shift in the afternoon. They to managing the door locks, they are in charge of the remote controls to manage projectors and air conditioners, so they turn these on at the beginning of the shift and expect to turn them off at the end of the shift.
+	
+	It is a rule that the classroom must be opened when the professor is ready to enter, which can be a delay or rush for the janitorial staff, as one day all classrooms will be required at the same time by the respective professors to start classes.
+	
+	When classes start, the professor must register the student's attendance, and from the very first classes, students may be evaluated on their performance, and the professor does not always identify each student, which may lead to some impersonation.
+	
+\section*{As part of academic planning, class timetables are drawn up each academic term.}
+	The SISGERA is implemented in a classroom at the Faculty of Engineering Sciences FCI. Some courses of its programs have practical hours -laboratory or field- and theoretical hours.
+	
+	As an example of a classroom use schedule, we provide below the morning shift schedule of the classroom, which is used to teach the ninth module of the Mechanical Engineering degree, is show in green.
+	
+	However, lessons are given for the eighth module of the Environmental Engineering degree in the same classroom during afternoon shift, which is shown in yellow.
+	The blank spaces show that the classroom is free at that time.
+	
+	\subsection*{Time without using the equipment}
+	As the travel time that professors need to go to the corresponding classroom is between 5 and 15 minutes, the time that lights, air conditioners and video projectors will remain on without use will be between 10 and 105 minutes per day.
+	
+\section*{In addition,}
+	Not to mention the days when students finish their morning classes before the afternoon classes start, for example Monday, Thursday and Friday. That maybe cause lights and equipment to remain on for hours unnecessarily. In addition, the professor plans the hours of laboratory practice, and he/she manages class time theory and practice. In practice time the students have classes in computer labs, applied physics labs or other environments depending on the program, they must leave their usual classrooms, which implies the devices and even the lights could remain on unnecessarily. Our proposal aims to avoid this waste of energy, while extending the lifetime of devices and lamps.
+
+\section*{Goal 3: Evaluation of the development methodology.}
+	
+	SISGERA has been developed using \textbf{TDDM 4 I.o.T.S}.
+	
+	\subsection*{Stage 1: Preliminary Analysis.}
+		\subsubsection*{Functional requirements.} 
+		Among the main requirements to be met by SISGERA are:
+		\begin{itemize}
+			\item Control devices: Turns on and off the lights, air conditioner and video projector.
+			\item Physical access control: Verifies the identity of professor through facial recognition, and Unlocks the door to allow the professor to enter.
+			\item Record student attendance by means of RFID identification.
+			\item Verify the identity of students by fingerprinting.
+			\item Unlock the door to let in students arriving after the start time.
+		\end{itemize}
+		
+		Regarding the \textbf{non-functional requirements} of the system, it was determined that, as it is a system to be deployed in a classroom, the power supply is guaranteed by the public utility. As for the Internet connection, a permanent Wi-Fi connection is available.
+	
+\section*{Technological feasibility: (IoT hardware.)}
+	All the IoT hardware components necessary to meet the functional requirements exist, and were within our reach.
+	\begin{itemize}
+		\item Raspberry Pi: for local processing and sending data via Internet.
+		\item Arduino Mega: to treat the signals captured by the sensors and send the data to the Raspberry Pi through the Bluetooth module.
+		\item infrared sensors: turn on and off air conditioner and video projector.
+		\item an IP camera: to recognize people through live video.
+		\item cards and RFID card reader: to identify students when accessing the classroom.
+		\item a fingerprint reader: to identify students more securely when required.
+		\item a motion sensor: to detect people presence inside the classroom; and
+		\item relay modules: to turn on and off lights and equipment.
+	\end{itemize}
+
+\section*{(Technological feasibility.)}
+	\subsection*{Software tools and technologies.}
+		\begin{itemize}
+			\item Python Language: to facial recognition with OpenCV. Runs on Rapsberry PI
+			\item Java langauge: to construct the Mobile app and Web Services RESTfull
+			\item SISGERA was tested with GlassFish as application server. It can also work with Apache Tomcat.
+			\item PostgreSQL: Persistence layer.
+		\end{itemize}
+	\subsection*{Economic feasibility.}
+	
+	SISGERA is an inexpensive IoTS, it was fully funded by the project team, and its cost was within the expected budget.
+	
+	\subsection*{Operational feasibility.}
+	SISGERA is intended to be easy to operate. RESTful web services will be created to store and retrieve the data in the database. The administrator will be able to take photographs of professors for facial recognition, and also feed the system with student and academic planning data.
+
+\section*{The SISGERA architecture consists of 4 layers.}
+	\begin{itemize}
+		\item \textbf{First layer:} local processing or set of components that could be called the device.
+		\item \textbf{Second Layer:} the mobile application with which the professor can interact with the environment.
+		\item \textbf{Third layer:} the web server where the application server is installed, which provides the web services, and the storage of the images for facial recognition, and of course.
+		\item \textbf{Fourth layer:} the data persistence layer that basically consists of a PostgreSQL database server.
+		\item For more details of the \textbf{device} and its \textbf{components} you can refer to the paper.
+	\end{itemize} 
+
+	\subsection*{Components of SISGERA Device.}
+		For more details of the components used you can refer to the paper.
+	
+\section*{Stage 3: Detailed requirement analysis.}
+	\subsection*{(Elicitation of system requirements.)}
+	The development of system was divided into different deliverables. For each one, the requirements were analysed in detail to obtain the tests that the software must pass, thus ensuring that the system meets the requirements demanded by the end users.
+
+\section*{Stage 4: Model Generation and Adaptation.}
+ 	In this phase, the class diagram was created, considered one of the most important in the construction of systems. It represent the architecture of the system software. With the appropriate tools, it was used to generate the database and part of the necessary code.
+	
+\section*{Generation and refinement Stages.}
+	\subsection*{Stage 5: Test generation.}
+	The system must respond appropriately to each of the possible cases that may occur. For example: it must not allow a professor to enter if it is not his or her approved schedule. Turn on the lights and equipment when a person enters. Lights and equipment must be turned off when there are no people in the classroom.
+	
+	\subsection*{Stage 6: Software generation.}	
+	This process can be manual or automatic. For the automatic generation of the software, Visual Paradigm was used. Visual Paradigm generate each class with its attributes and methods, to be used in the mobile application. 100\% of the Arduino code and the rest of the business logic code was written by the development team.
+	
+	\subsection*{Stage 7: Model refinement.}	
+	This stage was not necessary because of the size of the project and the developers' mastery of the domain. This is foreseen by the authors of TDDM 4 I.o.T.S.
+	
+	\subsection*{Stage 8: Software refinement.}	
+	This stage was executed only once, after obtaining the mobile application software for SISGERA. It was not necessary to refine the device configuration software, as it was written considering from the beginning the guidelines to obtain a clean code.
+
+\section*{Stage 9: Hardware and software deployment.}
+	\subsection*{The device.}
+	Was deployed as determined in the environment analysis. It was deployed in the classroom, connecting directly to the public power supply without the need for a battery, a router was installed to fix the Wi-Fi signal with good quality.
+	
+	\subsection*{The mobile application.}
+	Was installed on the smartphones of the professors who tested the application. This application has professor and Dean roles. The latter role is the one that authorises the professor to use the requested classroom.
+	
+	The first screenshot shows list of students who have registered their attendance, the middle screenshot shows a form to request classroom. The user Dean is one who approves his/her request. At the last screenshot shows the menu options for controlling equipment and lights, and unlocking the door.
+	
+\section*{Deliverable Assessment and maintenance Stages.}
+	\subsection*{Stage 10: Deliverable assessment.}
+		The device and the mobile application passed all tests specified in the test generation stage. In addition, the usability evaluation of SISGERA was done along 5 weeks only by professors. Following these results, more professors were involved in the design of the mobile application interfaces, to implement improvements. Those improvements resulted in 100\% acceptance by professors.
+	
+		\subsection*{Stage 11: Maintenance.}
+			SISGERA is a prototype, but considering the improvements made by the professors' comments, maintenance was not carried out as it is not a production system. However, it is planned to put it into production for a more exhaustive evaluation and to consider the maintenance stage.
+
+\section*{Conclusions.}
+		\begin{itemize}
+			\item We have presented SISGERA, an IoTS for classroom access control and resource management. It uses facial recognition for professors, and fingerprint recognition and RFID for students as user authentication methods.
+			\item The combination of RFID authentication and fingerprint recognition as identification methods can be used to deter students from identity theft.
+			\item SISGERA is designed to be replicated in different classrooms as a distributed system.
+			\item The reduction in energy consumption can be calculated according to the time that the equipment are kept off.
+			\item TDDM 4 I.o.T.S. is an effective guide for IoTS developers, especially for those who do not have sufficient experience in IoTS development.
+			\item End-users should maintain a dedicated involvement in the development of the IoTS, especially in the design of its user interfaces. TDDM 4 I.o.T.S. encourages user participation from the earliest stages of IoTS development.
+			\item As future work, the usability of the application by students and the energy consumption of two different classrooms, with and without the SISGERA system, respectively, will be evaluated.
+		\end{itemize}
+
+\section*{Thank you so much}
+\end{document}

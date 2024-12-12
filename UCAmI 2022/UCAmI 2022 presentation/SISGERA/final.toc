@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Goal (1): Improve management of classroom resources}{5}{0}{2}
+\beamer@sectionintoc {3}{Goal (2): Reducing electrical energy consumption}{7}{0}{3}
+\beamer@sectionintoc {4}{Goal (3): Evaluation of the development methodology}{10}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{20}{0}{5}
